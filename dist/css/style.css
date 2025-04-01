@@ -1456,7 +1456,8 @@ body::after {
   align-items: center;
   -webkit-column-gap: 1.5625rem;
   -moz-column-gap: 1.5625rem;
-  column-gap: 1.5625rem
+  column-gap: 1.5625rem;
+  position: relative
 }
 .seven__box p {
   line-height: 122%;
@@ -3584,7 +3585,7 @@ body::after {
   }
   .seven__right {
     max-width: 100%;
-    margin-bottom: 6.25rem;
+    padding-bottom: .625rem;
     border: 1px solid #000
   }
   .seven__box {
@@ -3596,7 +3597,20 @@ body::after {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
     border: 1px solid red!important
+  }
+  .seven__box::before {
+    content: "";
+    position: absolute;
+    left: -25%;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 160%;
+    height: 100%;
+    background: url(../img/seven/bg.webp) no-repeat right/cover;
+    z-index: -1
   }
   .seven__img {
     max-width: 100%
