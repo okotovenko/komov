@@ -4131,6 +4131,26 @@ body::after {
   }
 }
 @media (max-width:31.25em) {
+  .first__left :nth-child(1).first__item {
+    max-width: 7.5rem
+  }
+  .first__left :nth-child(1).first__item .first__img {
+    width: 100%
+  }
+  .first__left :nth-child(1).first__item .first__img>img,
+  .first__left :nth-child(1).first__item .first__img>picture {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain
+  }
+  .first__left :nth-child(1).first__item .first__img picture img,
+  .first__left :nth-child(1).first__item .first__img picture source {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain
+  }
   .two__items {
     grid-template-columns: auto
   }
