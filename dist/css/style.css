@@ -3585,8 +3585,7 @@ body::after {
   }
   .seven__right {
     max-width: 100%;
-    padding-bottom: .625rem;
-    border: 1px solid #000
+    padding-bottom: .625rem
   }
   .seven__box {
     margin-top: .9375rem;
@@ -3597,8 +3596,7 @@ body::after {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 2.5rem;
-    margin-bottom: 2.5rem;
-    border: 1px solid red!important
+    margin-bottom: 2.5rem
   }
   .seven__box::before {
     content: "";
