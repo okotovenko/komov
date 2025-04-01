@@ -1437,7 +1437,7 @@ body::after {
   -o-object-fit: contain;
   object-fit: contain
 }
-.seven__right ::before {
+.seven__right::before {
   content: "";
   position: absolute;
   left: 0;
@@ -3377,7 +3377,7 @@ body::after {
   }
   .two__end {
     max-width: 100%;
-    padding: 0
+    padding: 1.5rem 0
   }
   .faq__container h2 {
     text-align: center
@@ -3559,7 +3559,7 @@ body::after {
   .seven__left {
     max-width: 100%
   }
-  .seven__right ::before {
+  .seven__right::before {
     width: 120%;
     left: -10%
   }
