@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,300italic,italic,500italic&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Arsenal+SC:regular,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Raleway:regular,700,800&display=swap);
 * {
   padding: 0;
   margin: 0;
@@ -383,9 +383,9 @@ body::after {
   justify-content: center
 }
 .header__content {
-  font-family: "Arsenal SC";
+  font-family: Raleway;
   width: 100%;
-  max-width: 60%
+  max-width: 65%
 }
 .header__content h1 {
   font-weight: 700;
@@ -408,7 +408,8 @@ body::after {
 }
 .header__text {
   letter-spacing: .1em;
-  color: #fff
+  color: #fff;
+  line-height: 118.75%
 }
 .header__text p:not(:last-child) {
   margin-bottom: 1.25rem
