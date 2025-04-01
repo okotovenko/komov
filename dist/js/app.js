@@ -823,10 +823,19 @@
             }), 500);
         }));
     }
+    function showBlock() {
+        document.querySelector(".button").addEventListener("click", (() => {
+            document.querySelectorAll(".no-active, .active").forEach((element => {
+                element.classList.toggle("no-active");
+                element.classList.toggle("active");
+            }));
+        }));
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
     spollers();
     pageNavigation();
     preloader();
+    showBlock();
 })();

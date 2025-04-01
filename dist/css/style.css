@@ -181,11 +181,11 @@ body::after {
 }
 .spollers {
   display: grid;
+  grid-template-columns: repeat(2,1fr);
   gap: 1.25rem
 }
 .spollers__item {
-  font-size: 1.25rem;
-  background: rgba(245,245,245,.5)
+  font-size: 1.25rem
 }
 .spollers__item[open] {
   box-shadow: 0 0 50px 10px rgba(0,0,0,.05);
@@ -201,7 +201,8 @@ body::after {
   font-weight: 700;
   line-height: 122%;
   letter-spacing: .1em;
-  text-transform: uppercase
+  text-transform: uppercase;
+  background: rgba(245,245,245,.5)
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
@@ -211,6 +212,7 @@ body::after {
   cursor: pointer
 }
 ._spoller-init .spollers__title._spoller-active {
+  background: #fff;
   color: #018bbc
 }
 .spollers__body {
@@ -445,7 +447,8 @@ body::after {
 .footer__content h3 {
   font-weight: 600;
   line-height: 122%;
-  letter-spacing: .1em
+  letter-spacing: .1em;
+  font-style: italic
 }
 .footer__content b,
 .footer__content p {
@@ -455,6 +458,12 @@ body::after {
 }
 .footer__content b {
   max-width: 27.5rem
+}
+.footer__content strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  line-height: 100%
 }
 .footer__content :nth-child(2).footer__block.animation {
   -webkit-animation: top .2s .6s linear both;
@@ -632,7 +641,19 @@ body::after {
   font-weight: 700;
   line-height: 122%;
   letter-spacing: .1em;
-  text-transform: uppercase
+  text-transform: uppercase;
+  opacity: 0;
+  height: 0;
+  -webkit-transform: translateY(-1.25rem);
+  transform: translateY(-1.25rem);
+  transition: all .3s ease 0s
+}
+.two__container h3.active {
+  height: auto;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  transition: all .3s ease 0s
 }
 .two__top {
   display: flex
@@ -679,13 +700,23 @@ body::after {
   -webkit-animation: top .2s .6s linear both;
   animation: top .2s .6s linear both
 }
-.two__left h3 {
-  margin-bottom: .625rem
-}
 .two__left>p {
   font-weight: 400;
   line-height: 122%;
-  letter-spacing: .1em
+  letter-spacing: .1em;
+  height: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-1.25rem);
+  transform: translateY(-1.25rem);
+  transition: all .3s ease 0s
+}
+.two__left>p.active {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  transition: all .3s ease 0s;
+  height: auto;
+  opacity: 1;
+  margin-bottom: .625rem
 }
 .two__box {
   display: flex;
@@ -745,11 +776,25 @@ body::after {
   -webkit-column-gap: 3.75rem;
   -moz-column-gap: 3.75rem;
   column-gap: 3.75rem;
-  row-gap: 3.4375rem
+  row-gap: 3.4375rem;
+  height: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-1.25rem);
+  transform: translateY(-1.25rem);
+  transition: all .3s ease 0s
+}
+.two__bottom.active {
+  height: auto;
+  opacity: 1;
+  margin-bottom: .625rem;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  transition: all .3s ease 0s
 }
 .two__content {
   padding-top: 2.5rem;
-  width: 100%
+  width: 100%;
+  max-width: 32.5rem
 }
 .two__items {
   display: grid;
@@ -832,6 +877,21 @@ body::after {
   letter-spacing: .1em;
   text-align: center
 }
+.faq {
+  height: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-1.25rem);
+  transform: translateY(-1.25rem);
+  transition: all .3s ease 0s
+}
+.faq.active {
+  height: auto;
+  opacity: 1;
+  margin-bottom: .625rem;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  transition: all .3s ease 0s
+}
 .faq__container h2 {
   font-weight: 700;
   line-height: 122%;
@@ -859,6 +919,11 @@ body::after {
 }
 .three__left p:not(:last-child) {
   margin-bottom: 1.25rem
+}
+.three__left p span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem
 }
 .three__left p,
 .three__left span {
@@ -941,6 +1006,12 @@ body::after {
   font-weight: 400;
   line-height: 122%;
   letter-spacing: .1em
+}
+.four__container p span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
 }
 .four__left {
   display: flex;
@@ -1031,6 +1102,12 @@ body::after {
   letter-spacing: .1em;
   text-transform: uppercase
 }
+.five__container h3 span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
+}
 .five__container p {
   line-height: 122%;
   letter-spacing: .1em
@@ -1087,8 +1164,9 @@ body::after {
 .five__left>p {
   line-height: 122%;
   letter-spacing: .1em;
-  padding-bottom: 2.3125rem;
-  border-bottom: 1px solid #dbdbdb
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: .9375rem;
+  padding-bottom: 2.3125rem
 }
 .five__box {
   display: flex;
@@ -1247,6 +1325,12 @@ body::after {
   letter-spacing: .1em;
   text-transform: uppercase
 }
+.six__container h3 span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
+}
 .six__container p {
   font-weight: 400;
   line-height: 122%;
@@ -1356,6 +1440,12 @@ body::after {
   line-height: 122%;
   letter-spacing: .1em;
   text-transform: uppercase
+}
+.seven__container h3 span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
 }
 .seven__container p {
   line-height: 122%;
@@ -1529,6 +1619,12 @@ body::after {
   text-transform: uppercase;
   margin-top: 1.875rem
 }
+.eight__container h3 span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
+}
 .eight__container p {
   font-weight: 400;
   line-height: 122%;
@@ -1642,6 +1738,12 @@ body::after {
   line-height: 122%;
   letter-spacing: .1em;
   text-transform: uppercase
+}
+.nine__container h3 span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
 }
 .nine__container p {
   line-height: 122%;
@@ -1786,6 +1888,12 @@ body::after {
   text-transform: uppercase;
   margin-top: 1.875rem
 }
+.ten__container h3 span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
+}
 .ten__container p {
   font-weight: 400;
   line-height: 122%;
@@ -1917,6 +2025,12 @@ body::after {
 .eleven__container p:not(:last-child) {
   margin-bottom: 1.25rem
 }
+.eleven__container p span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
+}
 .eleven__top {
   display: flex;
   -webkit-column-gap: 5.625rem;
@@ -1946,7 +2060,7 @@ body::after {
 .eleven__left>span::before {
   content: "";
   position: absolute;
-  left: -200%;
+  left: -250%;
   top: 0;
   width: 400%;
   height: 100%;
@@ -2076,7 +2190,6 @@ body::after {
   max-width: 32.5rem;
   padding-top: 1.125rem;
   margin-left: -1.875rem;
-  z-index: -1;
   position: relative
 }
 .twelve__right::before {
@@ -2087,6 +2200,7 @@ body::after {
   width: 80%;
   height: 100%;
   border-bottom: 1px solid #dbdbdb;
+  pointer-events: none;
   background: rgba(0,0,0,0)
 }
 .twelve__right>span {
@@ -2145,6 +2259,12 @@ body::after {
 .twelve__content {
   width: 100%;
   max-width: 41.875rem
+}
+.twelve__content p span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .3125rem;
+  line-height: 100%
 }
 .twelve__content p:not(:last-child) {
   margin-bottom: 1.25rem
@@ -2367,6 +2487,9 @@ body::after {
   .footer__content p {
     font-size: 1rem
   }
+  .footer__content strong {
+    font-size: 1.875rem
+  }
   .footer__block {
     margin-bottom: 3rem
   }
@@ -2412,20 +2535,20 @@ body::after {
   .two__container h3 {
     font-size: 1rem
   }
+  .two__container h3.active {
+    margin-bottom: 2.3125rem
+  }
   .two__left>span {
     font-size: 1.125rem
   }
   .two__left h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .two__left>p {
     font-size: .75rem
   }
   .two__box p {
     font-size: .75rem
-  }
-  .two__content h3 {
-    margin-bottom: 2.3125rem
   }
   .two__item p {
     font-size: .75rem
@@ -2440,7 +2563,7 @@ body::after {
   .two__end span {
     font-size: .75rem
   }
-  .faq {
+  .faq.active {
     padding-bottom: 3.25rem
   }
   .faq__container h2 {
@@ -2452,6 +2575,9 @@ body::after {
   .three__container h2 {
     font-size: 1rem
   }
+  .three__left p span {
+    font-size: 1.875rem
+  }
   .three__left p,
   .three__left span {
     font-size: .75rem
@@ -2460,7 +2586,7 @@ body::after {
     padding-bottom: 10.9375rem
   }
   .four__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .four__container h3 {
     font-size: 1rem
@@ -2470,6 +2596,9 @@ body::after {
   }
   .four__container p {
     font-size: .75rem
+  }
+  .four__container p span {
+    font-size: 1.875rem
   }
   .four__box p {
     font-size: .75rem
@@ -2483,6 +2612,9 @@ body::after {
   .five__container h3 {
     font-size: 1rem
   }
+  .five__container h3 span {
+    font-size: 1.875rem
+  }
   .five__container p {
     font-size: .75rem
   }
@@ -2490,7 +2622,7 @@ body::after {
     font-size: 1.125rem
   }
   .five__left h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .five__left>p {
     font-size: .75rem
@@ -2510,7 +2642,7 @@ body::after {
     padding-bottom: 4.375rem
   }
   .resume__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .resume__container h2 {
     margin-bottom: 2.375rem
@@ -2534,19 +2666,22 @@ body::after {
     padding-bottom: 4rem
   }
   .resume__bottom span {
-    font-size: 1rem
+    font-size: 1.875rem
   }
   .six {
     padding-bottom: 5.625rem
   }
   .six__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .six__container h3 {
     font-size: 1rem
   }
   .six__container h3 {
     margin-bottom: 1.125rem
+  }
+  .six__container h3 span {
+    font-size: 1.875rem
   }
   .six__container p {
     font-size: .75rem
@@ -2569,6 +2704,9 @@ body::after {
   .seven__container h3 {
     font-size: 1rem
   }
+  .seven__container h3 span {
+    font-size: 1.875rem
+  }
   .seven__container p {
     font-size: .75rem
   }
@@ -2576,7 +2714,7 @@ body::after {
     font-size: 1.125rem
   }
   .seven__left h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .seven__left>p {
     font-size: .75rem
@@ -2591,13 +2729,16 @@ body::after {
     padding-bottom: 8.125rem
   }
   .eight__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .eight__container h3 {
     font-size: 1rem
   }
   .eight__container h3 {
     margin-bottom: 1.125rem
+  }
+  .eight__container h3 span {
+    font-size: 1.875rem
   }
   .eight__container p {
     font-size: .75rem
@@ -2617,6 +2758,9 @@ body::after {
   .nine__container h3 {
     font-size: 1rem
   }
+  .nine__container h3 span {
+    font-size: 1.875rem
+  }
   .nine__container p {
     font-size: .75rem
   }
@@ -2624,7 +2768,7 @@ body::after {
     font-size: 1.125rem
   }
   .nine__left h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .nine__left>p {
     font-size: .75rem
@@ -2644,13 +2788,16 @@ body::after {
     padding-bottom: 10.9375rem
   }
   .ten__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .ten__container h3 {
     font-size: 1rem
   }
   .ten__container h3 {
     margin-bottom: 1.125rem
+  }
+  .ten__container h3 span {
+    font-size: 1.875rem
   }
   .ten__container p {
     font-size: .75rem
@@ -2673,6 +2820,9 @@ body::after {
   .eleven__container p {
     font-size: .75rem
   }
+  .eleven__container p span {
+    font-size: 1.875rem
+  }
   .eleven__top {
     margin-bottom: 3.3125rem
   }
@@ -2680,7 +2830,7 @@ body::after {
     font-size: 1.125rem
   }
   .eleven__left h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .eleven__left h3 {
     margin-bottom: 2.5rem
@@ -2692,7 +2842,7 @@ body::after {
     padding-bottom: 5rem
   }
   .twelve__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .twelve__container h3 {
     font-size: 1rem
@@ -2717,11 +2867,14 @@ body::after {
     -moz-column-gap: 2.5rem;
     column-gap: 2.5rem
   }
+  .twelve__content p span {
+    font-size: 1.875rem
+  }
   .resum {
     padding-bottom: 5rem
   }
   .resum__container h2 {
-    font-size: 1.875rem
+    font-size: 1rem
   }
   .resum__container h2 {
     margin-bottom: 2.375rem
@@ -2748,7 +2901,7 @@ body::after {
     padding-bottom: 3rem
   }
   .resum__bottom span {
-    font-size: 1rem
+    font-size: 1.875rem
   }
   .end {
     padding-bottom: 5.3125rem
@@ -2771,6 +2924,22 @@ body::after {
     -webkit-column-gap: 7.5rem;
     -moz-column-gap: 7.5rem;
     column-gap: 7.5rem
+  }
+}
+@media (max-width:25em) {
+  .first__img>img,
+  .first__img>picture {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain
+  }
+  .first__img picture img,
+  .first__img picture source {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain
   }
 }
 @media (max-width:20em) {
@@ -2826,6 +2995,9 @@ body::after {
   .footer__content p {
     font-size: .5rem
   }
+  .footer__content strong {
+    font-size: .875rem
+  }
   .footer__block {
     margin-bottom: 1.75rem
   }
@@ -2871,20 +3043,20 @@ body::after {
   .two__container h3 {
     font-size: .75rem
   }
+  .two__container h3.active {
+    margin-bottom: 1.375rem
+  }
   .two__left>span {
     font-size: .75rem
   }
   .two__left h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .two__left>p {
     font-size: .5rem
   }
   .two__box p {
     font-size: .5rem
-  }
-  .two__content h3 {
-    margin-bottom: 1.375rem
   }
   .two__item p {
     font-size: .5rem
@@ -2899,7 +3071,7 @@ body::after {
   .two__end span {
     font-size: .5rem
   }
-  .faq {
+  .faq.active {
     padding-bottom: 2.625rem
   }
   .faq__container h2 {
@@ -2911,6 +3083,9 @@ body::after {
   .three__container h2 {
     font-size: .75rem
   }
+  .three__left p span {
+    font-size: .875rem
+  }
   .three__left p,
   .three__left span {
     font-size: .5rem
@@ -2919,7 +3094,7 @@ body::after {
     padding-bottom: 3.4375rem
   }
   .four__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .four__container h3 {
     font-size: .75rem
@@ -2929,6 +3104,9 @@ body::after {
   }
   .four__container p {
     font-size: .5rem
+  }
+  .four__container p span {
+    font-size: .875rem
   }
   .four__box p {
     font-size: .5rem
@@ -2942,6 +3120,9 @@ body::after {
   .five__container h3 {
     font-size: .75rem
   }
+  .five__container h3 span {
+    font-size: .875rem
+  }
   .five__container p {
     font-size: .5rem
   }
@@ -2949,7 +3130,7 @@ body::after {
     font-size: .75rem
   }
   .five__left h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .five__left>p {
     font-size: .5rem
@@ -2969,7 +3150,7 @@ body::after {
     padding-bottom: 2.5rem
   }
   .resume__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .resume__container h2 {
     margin-bottom: 1.875rem
@@ -2993,19 +3174,22 @@ body::after {
     padding-bottom: 2.875rem
   }
   .resume__bottom span {
-    font-size: .75rem
+    font-size: .875rem
   }
   .six {
     padding-bottom: 3.125rem
   }
   .six__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .six__container h3 {
     font-size: .75rem
   }
   .six__container h3 {
     margin-bottom: .625rem
+  }
+  .six__container h3 span {
+    font-size: .875rem
   }
   .six__container p {
     font-size: .5rem
@@ -3028,6 +3212,9 @@ body::after {
   .seven__container h3 {
     font-size: .75rem
   }
+  .seven__container h3 span {
+    font-size: .875rem
+  }
   .seven__container p {
     font-size: .5rem
   }
@@ -3035,7 +3222,7 @@ body::after {
     font-size: .75rem
   }
   .seven__left h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .seven__left>p {
     font-size: .5rem
@@ -3050,13 +3237,16 @@ body::after {
     padding-bottom: 3.75rem
   }
   .eight__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .eight__container h3 {
     font-size: .75rem
   }
   .eight__container h3 {
     margin-bottom: .625rem
+  }
+  .eight__container h3 span {
+    font-size: .875rem
   }
   .eight__container p {
     font-size: .5rem
@@ -3076,6 +3266,9 @@ body::after {
   .nine__container h3 {
     font-size: .75rem
   }
+  .nine__container h3 span {
+    font-size: .875rem
+  }
   .nine__container p {
     font-size: .5rem
   }
@@ -3083,7 +3276,7 @@ body::after {
     font-size: .75rem
   }
   .nine__left h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .nine__left>p {
     font-size: .5rem
@@ -3103,13 +3296,16 @@ body::after {
     padding-bottom: 3.4375rem
   }
   .ten__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .ten__container h3 {
     font-size: .75rem
   }
   .ten__container h3 {
     margin-bottom: .625rem
+  }
+  .ten__container h3 span {
+    font-size: .875rem
   }
   .ten__container p {
     font-size: .5rem
@@ -3132,6 +3328,9 @@ body::after {
   .eleven__container p {
     font-size: .5rem
   }
+  .eleven__container p span {
+    font-size: .875rem
+  }
   .eleven__top {
     margin-bottom: 1.875rem
   }
@@ -3139,7 +3338,7 @@ body::after {
     font-size: .75rem
   }
   .eleven__left h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .eleven__left h3 {
     margin-bottom: 1.25rem
@@ -3151,7 +3350,7 @@ body::after {
     padding-bottom: 4.375rem
   }
   .twelve__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .twelve__container h3 {
     font-size: .75rem
@@ -3176,11 +3375,14 @@ body::after {
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem
   }
+  .twelve__content p span {
+    font-size: .875rem
+  }
   .resum {
     padding-bottom: 2.1875rem
   }
   .resum__container h2 {
-    font-size: .875rem
+    font-size: .75rem
   }
   .resum__container h2 {
     margin-bottom: 1.875rem
@@ -3207,7 +3409,7 @@ body::after {
     padding-bottom: 2.5rem
   }
   .resum__bottom span {
-    font-size: .75rem
+    font-size: .875rem
   }
   .end {
     padding-bottom: 1.25rem
@@ -3307,7 +3509,8 @@ body::after {
     transform: rotate(45deg)
   }
   .spollers {
-    gap: .4375rem
+    gap: .4375rem;
+    grid-template-columns: auto
   }
   .spollers__title {
     padding: .6875rem .8125rem .6875rem .8125rem
@@ -3349,6 +3552,16 @@ body::after {
     background-position: 80%;
     background-size: cover
   }
+  .first__left :nth-child(1).first__item {
+    padding-right: .625rem
+  }
+  .first__left :nth-child(3).first__item {
+    padding-left: .625rem
+  }
+  .first__img {
+    flex: 0 1 2.8125rem;
+    height: 2.8125rem
+  }
   .two__container h3 {
     text-align: center
   }
@@ -3385,6 +3598,9 @@ body::after {
   }
   .two__bottom {
     flex-direction: column
+  }
+  .two__content {
+    max-width: 100%
   }
   .two__items {
     row-gap: 1.875rem
@@ -3905,26 +4121,13 @@ body::after {
 @media (max-width:37.5em) {
   .first__left h5,
   .first__right h5 {
-    margin-bottom: 0
+    margin-bottom: 1.25rem
   }
   .first__left .first__item {
     padding: 1.875rem 0
   }
   .first__left :nth-child(2).first__item {
-    border-top: 1px solid #e4e4e4;
-    border-bottom: 1px solid #e4e4e4;
-    border-left: none;
-    border-right: none
-  }
-  .first__right .first__item {
-    padding: 1.875rem 0
-  }
-  .first__right :nth-child(1).first__item {
-    border-bottom: 1px solid #e4e4e4;
-    border-right: none
-  }
-  .first__items {
-    flex-direction: column
+    padding: 1.875rem .625rem
   }
 }
 @media (max-width:31.25em) {
@@ -3988,6 +4191,9 @@ body::after {
   .footer__content p {
     font-size: clamp(.5rem ,.3232044199rem + .8839779006vw ,1rem)
   }
+  .footer__content strong {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .footer__block {
     margin-bottom: clamp(1.75rem ,1.3080110497rem + 2.2099447514vw ,3rem)
   }
@@ -4033,20 +4239,20 @@ body::after {
   .two__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
+  .two__container h3.active {
+    margin-bottom: clamp(1.375rem ,1.0435082873rem + 1.6574585635vw ,2.3125rem)
+  }
   .two__left>span {
     font-size: clamp(.75rem ,.6174033149rem + .6629834254vw ,1.125rem)
   }
   .two__left h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .two__left>p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
   .two__box p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
-  }
-  .two__content h3 {
-    margin-bottom: clamp(1.375rem ,1.0435082873rem + 1.6574585635vw ,2.3125rem)
   }
   .two__item p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4061,7 +4267,7 @@ body::after {
   .two__end span {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
-  .faq {
+  .faq.active {
     padding-bottom: clamp(2.625rem ,2.4040055249rem + 1.1049723757vw ,3.25rem)
   }
   .faq__container h2 {
@@ -4073,6 +4279,9 @@ body::after {
   .three__container h2 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
+  .three__left p span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .three__left p,
   .three__left span {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4081,7 +4290,7 @@ body::after {
     padding-bottom: clamp(3.4375rem ,.7855662983rem + 13.2596685083vw ,10.9375rem)
   }
   .four__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .four__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
@@ -4091,6 +4300,9 @@ body::after {
   }
   .four__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
+  }
+  .four__container p span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
   }
   .four__box p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4104,6 +4316,9 @@ body::after {
   .five__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
+  .five__container h3 span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .five__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
@@ -4111,7 +4326,7 @@ body::after {
     font-size: clamp(.75rem ,.6174033149rem + .6629834254vw ,1.125rem)
   }
   .five__left h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .five__left>p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4131,7 +4346,7 @@ body::after {
     padding-bottom: clamp(2.5rem ,1.8370165746rem + 3.3149171271vw ,4.375rem)
   }
   .resume__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .resume__container h2 {
     margin-bottom: clamp(1.875rem ,1.6982044199rem + .8839779006vw ,2.375rem)
@@ -4155,19 +4370,22 @@ body::after {
     padding-bottom: clamp(2.875rem ,2.4772099448rem + 1.9889502762vw ,4rem)
   }
   .resume__bottom span {
-    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
   }
   .six {
     padding-bottom: clamp(3.125rem ,2.2410220994rem + 4.4198895028vw ,5.625rem)
   }
   .six__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .six__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .six__container h3 {
     margin-bottom: clamp(.625rem ,.4482044199rem + .8839779006vw ,1.125rem)
+  }
+  .six__container h3 span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
   }
   .six__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4190,6 +4408,9 @@ body::after {
   .seven__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
+  .seven__container h3 span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .seven__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
@@ -4197,7 +4418,7 @@ body::after {
     font-size: clamp(.75rem ,.6174033149rem + .6629834254vw ,1.125rem)
   }
   .seven__left h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .seven__left>p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4212,13 +4433,16 @@ body::after {
     padding-bottom: clamp(3.75rem ,2.203038674rem + 7.7348066298vw ,8.125rem)
   }
   .eight__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .eight__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .eight__container h3 {
     margin-bottom: clamp(.625rem ,.4482044199rem + .8839779006vw ,1.125rem)
+  }
+  .eight__container h3 span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
   }
   .eight__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4238,6 +4462,9 @@ body::after {
   .nine__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
+  .nine__container h3 span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .nine__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
@@ -4245,7 +4472,7 @@ body::after {
     font-size: clamp(.75rem ,.6174033149rem + .6629834254vw ,1.125rem)
   }
   .nine__left h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .nine__left>p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4265,13 +4492,16 @@ body::after {
     padding-bottom: clamp(3.4375rem ,.7855662983rem + 13.2596685083vw ,10.9375rem)
   }
   .ten__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .ten__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .ten__container h3 {
     margin-bottom: clamp(.625rem ,.4482044199rem + .8839779006vw ,1.125rem)
+  }
+  .ten__container h3 span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
   }
   .ten__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
@@ -4294,6 +4524,9 @@ body::after {
   .eleven__container p {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
+  .eleven__container p span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .eleven__top {
     margin-bottom: clamp(1.875rem ,1.3667127072rem + 2.5414364641vw ,3.3125rem)
   }
@@ -4301,7 +4534,7 @@ body::after {
     font-size: clamp(.75rem ,.6174033149rem + .6629834254vw ,1.125rem)
   }
   .eleven__left h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .eleven__left h3 {
     margin-bottom: clamp(1.25rem ,.8080110497rem + 2.2099447514vw ,2.5rem)
@@ -4313,7 +4546,7 @@ body::after {
     padding-bottom: clamp(4.375rem ,4.1540055249rem + 1.1049723757vw ,5rem)
   }
   .twelve__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .twelve__container h3 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
@@ -4338,11 +4571,14 @@ body::after {
     -moz-column-gap: clamp(1.25rem ,.8080110497rem + 2.2099447514vw ,2.5rem);
     column-gap: clamp(1.25rem ,.8080110497rem + 2.2099447514vw ,2.5rem)
   }
+  .twelve__content p span {
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+  }
   .resum {
     padding-bottom: clamp(2.1875rem ,1.1930248619rem + 4.9723756906vw ,5rem)
   }
   .resum__container h2 {
-    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
+    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
   .resum__container h2 {
     margin-bottom: clamp(1.875rem ,1.6982044199rem + .8839779006vw ,2.375rem)
@@ -4369,7 +4605,7 @@ body::after {
     padding-bottom: clamp(2.5rem ,2.3232044199rem + .8839779006vw ,3rem)
   }
   .resum__bottom span {
-    font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
+    font-size: clamp(.875rem ,.5214088398rem + 1.7679558011vw ,1.875rem)
   }
   .end {
     padding-bottom: clamp(1.25rem ,-.1864640884rem + 7.182320442vw ,5.3125rem)
@@ -4404,7 +4640,8 @@ body::after {
     text-decoration: underline
   }
   .two__box a:hover {
-    text-decoration: underline
+    text-decoration: underline;
+    cursor: pointer
   }
   .two__end a:hover {
     text-decoration: underline
