@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,300italic,italic,500italic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Arsenal+SC:regular,700&display=swap);
 * {
   padding: 0;
   margin: 0;
@@ -382,6 +383,7 @@ body::after {
   justify-content: center
 }
 .header__content {
+  font-family: "Arsenal SC";
   width: 100%;
   max-width: 60%
 }
@@ -2460,7 +2462,7 @@ body::after {
     height: 1.5rem
   }
   .header__content h1 {
-    font-size: 2rem
+    font-size: 2.5rem
   }
   .header__content h1 {
     margin-bottom: 2.25rem
@@ -4184,7 +4186,7 @@ body::after {
     height: clamp(1.125rem ,.9924033149rem + .6629834254vw ,1.5rem)
   }
   .header__content h1 {
-    font-size: clamp(1rem ,.6464088398rem + 1.7679558011vw ,2rem)
+    font-size: clamp(1rem ,.4696132597rem + 2.6519337017vw ,2.5rem)
   }
   .header__content h1 {
     margin-bottom: clamp(1.1875rem ,.8118093923rem + 1.8784530387vw ,2.25rem)
