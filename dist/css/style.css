@@ -353,7 +353,7 @@ body::after {
   object-fit: contain
 }
 .header {
-  background: linear-gradient(135deg,#003f60 0,rgba(1,145,154,0) 100%),url(../img/header-bg.webp) no-repeat right/cover
+  z-index: 2
 }
 .header__top {
   font-weight: 700;
@@ -367,20 +367,26 @@ body::after {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  flex-wrap: wrap;
+  border-bottom: 1px solid #a3a3a3;
   padding-right: 1.1875rem
-}
-.header__top ul :nth-child(1) {
-  background-color: #018bbc
-}
-.header__top ul :nth-child(2) {
-  background-color: #01c3cd
 }
 .header__top ul li {
   border-radius: .625rem;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  padding: .3125rem .9375rem;
+  transition: all .3s ease 0s
+}
+.header__top ul li:nth-child(1) {
+  background-color: #018bbc
+}
+.header__top ul li:nth-child(2) {
+  background-color: #01c3cd
+}
+.header__top ul li:nth-child(3) {
+  background-color: #01cd67
 }
 .header__content {
   font-family: Raleway;
@@ -490,6 +496,10 @@ body::after {
 }
 .footer__text p:not(:last-child) {
   margin-bottom: 1.25rem
+}
+.hero {
+  background: linear-gradient(135deg,#003f60 0,rgba(1,145,154,0) 100%),url(../img/header-bg.webp) no-repeat right/cover;
+  margin-top: -5.5rem
 }
 .first__container>p {
   width: 100%;
@@ -929,7 +939,7 @@ body::after {
 .three__left p span {
   display: block;
   font-weight: 700;
-  margin-bottom: .3125rem
+  margin-bottom: .9375rem
 }
 .three__left p,
 .three__left span {
@@ -948,7 +958,7 @@ body::after {
   text-align: center;
   color: #018bbc;
   margin-bottom: 2.1875rem;
-  gap: .8125rem
+  gap: .625rem
 }
 .three__left a>img,
 .three__left a>picture {
@@ -1016,7 +1026,7 @@ body::after {
 .four__container p span {
   display: block;
   font-weight: 700;
-  margin-bottom: .3125rem;
+  margin-bottom: .9375rem;
   line-height: 100%
 }
 .four__left {
@@ -1253,9 +1263,25 @@ body::after {
   animation: top .2s .3s linear both
 }
 .resume__box {
+  width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 3.125rem;
   background-color: #2f3a4c
+}
+.resume__box>a {
+  padding: .625rem .9375rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 1.875rem;
+  background-color: #01c3cd;
+  align-self: center;
+  transition: all .3s ease 0s;
+  text-align: center;
+  line-height: 122%;
+  min-width: 24.1875rem
 }
 .resume__center,
 .resume__top {
@@ -1287,7 +1313,7 @@ body::after {
 }
 .resume__right span {
   color: #018bbc;
-  margin-right: .625rem
+  margin-right: .1875rem
 }
 .resume__bottom {
   padding-top: 2.25rem;
@@ -1301,7 +1327,12 @@ body::after {
   width: 200%;
   height: 100%;
   background: rgba(0,0,0,0);
-  border-top: 1px solid rgba(255,255,255,.2)
+  border-top: 1px solid rgba(255,255,255,.2);
+  pointer-events: none
+}
+.resume__bottom p {
+  line-height: 122%;
+  letter-spacing: .1em
 }
 .resume__bottom span {
   display: block;
@@ -1354,7 +1385,7 @@ body::after {
 }
 .six__container ul li span {
   color: #01c3cd;
-  margin-right: .3125rem
+  margin-right: .1875rem
 }
 .six__top {
   display: flex;
@@ -1510,7 +1541,8 @@ body::after {
   line-height: 123%;
   letter-spacing: .1em;
   text-transform: uppercase;
-  opacity: 0
+  opacity: 0;
+  margin-bottom: 2.1875rem
 }
 .seven__left h2.animation {
   -webkit-animation: top .2s .6s linear both;
@@ -1613,7 +1645,8 @@ body::after {
   row-gap: 1.5rem
 }
 .seven__item {
-  max-width: 26.25rem
+  max-width: 23.75rem;
+  width: 33%
 }
 .seven__item p {
   font-size: 12px;
@@ -2013,6 +2046,11 @@ body::after {
 .ten__text p:not(:last-child) {
   margin-bottom: 1.25rem
 }
+.ten__text p a {
+  color: #018bbc;
+  text-decoration: underline;
+  transition: all .3s ease 0s
+}
 .ten__bottom h3 {
   margin-bottom: 1.75rem
 }
@@ -2042,9 +2080,6 @@ body::after {
 .eleven__container p {
   line-height: 122%;
   letter-spacing: .1em
-}
-.eleven__container p:not(:last-child) {
-  margin-bottom: 1.25rem
 }
 .eleven__container p span {
   display: block;
@@ -2115,6 +2150,9 @@ body::after {
   text-align: center;
   color: #01c3cd
 }
+.eleven__row p {
+  margin-bottom: 1.25rem
+}
 .eleven__items {
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -2152,6 +2190,13 @@ body::after {
   width: 100%;
   -o-object-fit: contain;
   object-fit: contain
+}
+.eleven__bottom p {
+  margin: 0;
+  line-height: 122%
+}
+.eleven__bottom p span {
+  margin-bottom: .9375rem
 }
 .twelve__container h2 {
   font-weight: 700;
@@ -2284,7 +2329,7 @@ body::after {
 .twelve__content p span {
   display: block;
   font-weight: 700;
-  margin-bottom: .3125rem;
+  margin-bottom: .9375rem;
   line-height: 100%
 }
 .twelve__content p:not(:last-child) {
@@ -2331,12 +2376,26 @@ body::after {
   letter-spacing: .1em
 }
 .resum__box {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   padding-bottom: 3.125rem;
   background-color: #2f3a4c
 }
+.resum__box>a {
+  padding: .625rem .9375rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 1.875rem;
+  background-color: #01cd67;
+  align-self: center;
+  transition: all .3s ease 0s;
+  text-align: center;
+  line-height: 122%;
+  min-width: 24.1875rem
+}
 .resum__top {
-  align-self: flex-start;
   align-items: center;
   display: flex;
   -webkit-column-gap: 1.875rem;
@@ -2406,9 +2465,11 @@ body::after {
   margin-bottom: .625rem
 }
 .end__container ul {
-  margin-bottom: 2.5rem
+  margin-bottom: 2.1875rem
 }
 .end__container ul li {
+  display: flex;
+  gap: .1875rem;
   line-height: 122%;
   letter-spacing: .1em
 }
@@ -2467,17 +2528,11 @@ body::after {
   .header {
     padding-top: 1.875rem
   }
-  .header {
-    padding-bottom: 8.75rem
-  }
   .header__top {
     font-size: .75rem
   }
   .header__top ul {
     padding-bottom: 2.125rem
-  }
-  .header__top ul li {
-    width: 12.1875rem
   }
   .header__top ul li {
     height: 1.5rem
@@ -2518,6 +2573,12 @@ body::after {
   }
   .footer__text {
     margin-bottom: 3.125rem
+  }
+  .hero {
+    padding-top: 7.5rem
+  }
+  .hero {
+    padding-bottom: 8.75rem
   }
   .first {
     padding-top: 3.625rem
@@ -2679,6 +2740,9 @@ body::after {
   .resume__box {
     padding-right: 2.8125rem
   }
+  .resume__box>a {
+    margin-top: 3.125rem
+  }
   .resume__left b {
     font-size: 1rem
   }
@@ -2693,6 +2757,9 @@ body::after {
   }
   .six {
     padding-bottom: 5.625rem
+  }
+  .six {
+    padding-top: 5.625rem
   }
   .six__container h2 {
     font-size: 1rem
@@ -2917,6 +2984,9 @@ body::after {
   .resum__box {
     padding-right: 2.8125rem
   }
+  .resum__box>a {
+    margin-top: 3.125rem
+  }
   .resum__top {
     margin-bottom: 1.875rem
   }
@@ -2931,6 +3001,9 @@ body::after {
   }
   .end {
     padding-bottom: 5.3125rem
+  }
+  .end {
+    padding-top: 5.3125rem
   }
   .end__container h3 {
     font-size: 1.25rem
@@ -2967,6 +3040,12 @@ body::after {
     -o-object-fit: contain;
     object-fit: contain
   }
+  .resume__box>a {
+    font-size: .75rem
+  }
+  .resum__box>a {
+    font-size: .75rem
+  }
 }
 @media (max-width:20em) {
   .spollers__title {
@@ -2978,17 +3057,11 @@ body::after {
   .header {
     padding-top: 1.25rem
   }
-  .header {
-    padding-bottom: 1.875rem
-  }
   .header__top {
     font-size: .5rem
   }
   .header__top ul {
     padding-bottom: 1.5625rem
-  }
-  .header__top ul li {
-    width: 7.8125rem
   }
   .header__top ul li {
     height: 1.125rem
@@ -3029,6 +3102,12 @@ body::after {
   }
   .footer__text {
     margin-bottom: 1.5625rem
+  }
+  .hero {
+    padding-top: 6.875rem
+  }
+  .hero {
+    padding-bottom: 1.875rem
   }
   .first {
     padding-top: 1.875rem
@@ -3190,6 +3269,9 @@ body::after {
   .resume__box {
     padding-right: .625rem
   }
+  .resume__box>a {
+    margin-top: 1.25rem
+  }
   .resume__left b {
     font-size: .75rem
   }
@@ -3204,6 +3286,9 @@ body::after {
   }
   .six {
     padding-bottom: 3.125rem
+  }
+  .six {
+    padding-top: 3.125rem
   }
   .six__container h2 {
     font-size: .75rem
@@ -3428,6 +3513,9 @@ body::after {
   .resum__box {
     padding-right: .625rem
   }
+  .resum__box>a {
+    margin-top: 1.25rem
+  }
   .resum__top {
     margin-bottom: .9375rem
   }
@@ -3442,6 +3530,9 @@ body::after {
   }
   .end {
     padding-bottom: 1.25rem
+  }
+  .end {
+    padding-top: 1.25rem
   }
   .end__container h3 {
     font-size: .75rem
@@ -3464,7 +3555,8 @@ body::after {
 @media (max-width:61.99875em) {
   .header__top ul {
     border-bottom: none;
-    gap: .9375rem
+    gap: .9375rem;
+    padding-right: 0
   }
   .first__box {
     flex-direction: column
@@ -3558,9 +3650,7 @@ body::after {
     flex-direction: column
   }
   .header {
-    background: linear-gradient(135deg,#003f60 0,rgba(1,145,154,.19) 100%),url(../img/header-bg.webp) no-repeat;
-    background-position: 80%;
-    background-size: cover
+    padding-top: 1.25rem
   }
   .footer__content h3 {
     width: 150%
@@ -3580,6 +3670,12 @@ body::after {
     background: linear-gradient(135deg,#003f60 0,rgba(1,145,154,.19) 100%),url(../img/footer/bg.webp) no-repeat;
     background-position: 80%;
     background-size: cover
+  }
+  .hero {
+    background: linear-gradient(135deg,#003f60 0,rgba(1,145,154,.19) 100%),url(../img/header-bg.webp) no-repeat;
+    background-position: 80%;
+    background-size: cover;
+    margin-top: -6.25rem
   }
   .first__left :nth-child(1).first__item {
     padding-right: .625rem
@@ -3801,6 +3897,9 @@ body::after {
   .six__item p {
     text-align: center
   }
+  .six {
+    padding-top: 0
+  }
   .seven__container h3 {
     text-align: center
   }
@@ -3867,6 +3966,9 @@ body::after {
   }
   .seven__item p {
     text-align: center
+  }
+  .seven__item {
+    width: 100%
   }
   .eight__container h3 {
     margin-top: 0
@@ -4184,8 +4286,16 @@ body::after {
   .two__items {
     grid-template-columns: auto
   }
+  .resume__box>a {
+    font-size: .875rem;
+    min-width: auto
+  }
   .eleven__items {
     grid-template-columns: auto
+  }
+  .resum__box>a {
+    font-size: .875rem;
+    min-width: auto
   }
 }
 @media (min-width:20em)and (max-width:76.5625em) {
@@ -4198,17 +4308,11 @@ body::after {
   .header {
     padding-top: clamp(1.25rem ,1.0290055249rem + 1.1049723757vw ,1.875rem)
   }
-  .header {
-    padding-bottom: clamp(1.875rem ,-.5559392265rem + 12.1546961326vw ,8.75rem)
-  }
   .header__top {
     font-size: clamp(.5rem ,.4116022099rem + .4419889503vw ,.75rem)
   }
   .header__top ul {
     padding-bottom: clamp(1.5625rem ,1.3636049724rem + .9944751381vw ,2.125rem)
-  }
-  .header__top ul li {
-    width: clamp(7.8125rem ,6.265538674rem + 7.7348066298vw ,12.1875rem)
   }
   .header__top ul li {
     height: clamp(1.125rem ,.9924033149rem + .6629834254vw ,1.5rem)
@@ -4249,6 +4353,12 @@ body::after {
   }
   .footer__text {
     margin-bottom: clamp(1.5625rem ,1.0100138122rem + 2.7624309392vw ,3.125rem)
+  }
+  .hero {
+    padding-top: clamp(6.875rem ,6.6540055249rem + 1.1049723757vw ,7.5rem)
+  }
+  .hero {
+    padding-bottom: clamp(1.875rem ,-.5559392265rem + 12.1546961326vw ,8.75rem)
   }
   .first {
     padding-top: clamp(1.875rem ,1.2562154696rem + 3.0939226519vw ,3.625rem)
@@ -4410,6 +4520,9 @@ body::after {
   .resume__box {
     padding-right: clamp(.625rem ,-.148480663rem + 3.8674033149vw ,2.8125rem)
   }
+  .resume__box>a {
+    margin-top: clamp(1.25rem ,.5870165746rem + 3.3149171271vw ,3.125rem)
+  }
   .resume__left b {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
   }
@@ -4424,6 +4537,9 @@ body::after {
   }
   .six {
     padding-bottom: clamp(3.125rem ,2.2410220994rem + 4.4198895028vw ,5.625rem)
+  }
+  .six {
+    padding-top: clamp(3.125rem ,2.2410220994rem + 4.4198895028vw ,5.625rem)
   }
   .six__container h2 {
     font-size: clamp(.75rem ,.6616022099rem + .4419889503vw ,1rem)
@@ -4648,6 +4764,9 @@ body::after {
   .resum__box {
     padding-right: clamp(.625rem ,-.148480663rem + 3.8674033149vw ,2.8125rem)
   }
+  .resum__box>a {
+    margin-top: clamp(1.25rem ,.5870165746rem + 3.3149171271vw ,3.125rem)
+  }
   .resum__top {
     margin-bottom: clamp(.9375rem ,.6060082873rem + 1.6574585635vw ,1.875rem)
   }
@@ -4662,6 +4781,9 @@ body::after {
   }
   .end {
     padding-bottom: clamp(1.25rem ,-.1864640884rem + 7.182320442vw ,5.3125rem)
+  }
+  .end {
+    padding-top: clamp(1.25rem ,-.1864640884rem + 7.182320442vw ,5.3125rem)
   }
   .end__container h3 {
     font-size: clamp(.75rem ,.5732044199rem + .8839779006vw ,1.25rem)
@@ -4687,7 +4809,9 @@ body::after {
 }
 @media (any-hover:hover) {
   .header__top ul li:hover {
-    cursor: pointer
+    cursor: pointer;
+    color: #000;
+    transition: all .3s ease 0s
   }
   .first__item a:hover {
     text-decoration: underline
@@ -4708,6 +4832,10 @@ body::after {
   .five__box a:hover {
     text-decoration: underline
   }
+  .resume__box>a:hover {
+    color: #000;
+    transition: all .3s ease 0s
+  }
   .six__box a:hover {
     text-decoration: underline
   }
@@ -4723,10 +4851,18 @@ body::after {
   .ten__box a:hover {
     text-decoration: underline
   }
+  .ten__text p a:hover {
+    text-decoration: none;
+    transition: all .3s ease 0s
+  }
   .eleven__box a:hover {
     text-decoration: underline
   }
   .twelve__box a:hover {
     text-decoration: underline
+  }
+  .resum__box>a:hover {
+    color: #000;
+    transition: all .3s ease 0s
   }
 }
