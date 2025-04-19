@@ -750,7 +750,8 @@ body::after {
   -webkit-column-gap: 1.5625rem;
   -moz-column-gap: 1.5625rem;
   column-gap: 1.5625rem;
-  margin-bottom: 2.0625rem
+  margin-bottom: 2.0625rem;
+  row-gap: 1.25rem
 }
 .two__box p {
   line-height: 122%;
@@ -763,19 +764,28 @@ body::after {
   text-align: center;
   color: #018bbc
 }
+.two__img {
+  display: flex;
+  flex-direction: column
+}
 .two__img>img,
 .two__img>picture {
   width: 7.75rem;
   height: 3.3125rem;
   -o-object-fit: contain;
-  object-fit: contain
+  object-fit: contain;
+  margin-bottom: .375rem
 }
 .two__img picture img,
 .two__img picture source {
   width: 7.75rem;
   height: 3.3125rem;
   -o-object-fit: contain;
-  object-fit: contain
+  object-fit: contain;
+  margin-bottom: .375rem
+}
+.two__img a {
+  align-self: center
 }
 .two__right {
   z-index: 2;
@@ -807,7 +817,10 @@ body::after {
   opacity: 0;
   -webkit-transform: translateY(-1.25rem);
   transform: translateY(-1.25rem);
-  transition: all .3s ease 0s
+  transition: all .3s ease 0s;
+  position: relative;
+  z-index: -1;
+  pointer-events: none
 }
 .two__bottom.active {
   height: auto;
@@ -815,7 +828,9 @@ body::after {
   margin-bottom: .625rem;
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  transition: all .3s ease 0s
+  transition: all .3s ease 0s;
+  pointer-events: visible;
+  z-index: 1
 }
 .two__content {
   padding-top: 2.5rem;
@@ -908,7 +923,10 @@ body::after {
   opacity: 0;
   -webkit-transform: translateY(-1.25rem);
   transform: translateY(-1.25rem);
-  transition: all .3s ease 0s
+  transition: all .3s ease 0s;
+  pointer-events: none;
+  position: relative;
+  z-index: -1
 }
 .faq.active {
   height: auto;
@@ -916,7 +934,9 @@ body::after {
   margin-bottom: .625rem;
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  transition: all .3s ease 0s
+  transition: all .3s ease 0s;
+  pointer-events: visible;
+  z-index: 1
 }
 .faq__container h2 {
   font-weight: 700;
